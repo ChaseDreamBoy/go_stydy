@@ -13,8 +13,9 @@ package slice
 import "testing"
 
 func TestSliceInit(t *testing.T) {
-	// 声明一个slice
+	// 声明一个slice, 和申明数组的差别是这里没有指定长度, 表示 slice 是可变长的
 	var s1 []int
+	// 初始的 len 和 cap 值
 	t.Log(len(s1), cap(s1))
 	// 填充容量
 	s1 = append(s1, 0)
@@ -55,6 +56,7 @@ func TestSliceShareMemory(t *testing.T) {
 	summer := year[5:8]
 	t.Log(summer, len(summer), cap(summer))
 	// cap 是 该 切片 剩下的存储空间
+	// 修改其中一个, 也会影响其他的存储空间
 	summer[0] = "un know"
 	t.Log(Q2)
 }

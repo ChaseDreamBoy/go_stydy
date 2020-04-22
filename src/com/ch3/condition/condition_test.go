@@ -3,9 +3,18 @@ package condition
 import "testing"
 
 func TestMultiSec(t *testing.T) {
+	// if 中写变量，改变量不能在 if 外面用
+	// 常用的用法师处理方法的多返回值
 	if a := 1 == 1; a {
 		t.Log("1 == 1")
+		t.Log("1 == 1", a)
 	}
+	// 普通 if
+	b := 10 / 2
+	if b > 3 {
+		t.Log("b == ", b)
+	}
+
 }
 
 func TestMultiSwitchTry(t *testing.T) {

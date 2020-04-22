@@ -1,5 +1,7 @@
 package fib
 
+// 实现 斐波拉契
+
 import (
 	"fmt"
 	"testing"
